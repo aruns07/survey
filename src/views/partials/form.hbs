@@ -1,0 +1,20 @@
+<form class="survey-form">
+	{{#each data.sections}}
+    <fieldset class="survey-question-container">
+        <legend class="survey-section">{{text}}</legend>
+        <ul class="survey-section-question-list">
+        	{{#each questions}}
+            <li class="survey-section-question">
+                <div> {{text}}
+                	<div class="qestion-response-widget">
+                		<input type="radio"/>
+                	</div>
+                </div>
+            </li>
+    		{{/each}}        
+        </ul>
+        {{finalComment}}
+        <textarea></textarea>
+    </fieldset>
+	{{/each}}
+</form>
