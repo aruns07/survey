@@ -8,6 +8,7 @@ let fs = require('fs'),
 	cssnano = require('gulp-cssnano'),
 	autoprefixer = require('gulp-autoprefixer');
 	run = require('gulp-run'),
+	server = require('gulp-express'),
 	plumber = require('gulp-plumber');
 
 let projectPackage = JSON.parse(fs.readFileSync('package.json'));
@@ -84,7 +85,7 @@ gulp.task('other', () => {
 });
 
 gulp.task('serve', () => {
-	run(projectPackage.scripts.start).exec();
+	server.run(['web.js']);
 
 	gulp.watch('src/views/**/*', ['other']);
 	gulp.watch('src/script/**/*', ['script']);
