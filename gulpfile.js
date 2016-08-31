@@ -72,7 +72,7 @@ gulp.task('script', () => {
 });
 
 gulp.task('style', () => {
-	return gulp.src('src/style/**/*.less')
+	return gulp.src('src/style/main.less')
 			.pipe(less())
 			.pipe(autoprefixer())
 			.pipe(cssnano())
