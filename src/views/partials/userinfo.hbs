@@ -1,0 +1,25 @@
+<div class="survey-userinfo">
+
+    <fieldset class="survey-question-container">
+        <legend class="survey-section-heading">
+            {{data.userData.heading}}
+            <br>
+            <span class="survey-section-subheading">{{data.userData.subHeading}}</span>
+        </legend>
+        	{{#each data.userData.questions}}
+            <div class="survey-userinfo-field">
+                <label for="survey-userinfo-field_{{@index}}">
+                    {{text}}
+                </label>
+                <select id="survey-userinfo-field_{{@index}}">
+                    <option>Please select</option>
+                   {{#each options}}
+                    <option>{{.}}</option>
+                   {{/each}} 
+                </select>
+            </div>
+    		{{/each}}        
+
+    </fieldset>
+
+</form>

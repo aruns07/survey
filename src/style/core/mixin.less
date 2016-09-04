@@ -1,0 +1,12 @@
+.content-spacing() {
+	padding: 20px 10px;
+    margin: 40px 0;
+}
+
+.response-styles(@n, @i: 1) when (@i =< @n) {
+
+	.survey-response[response='@{i}'] label:nth-child(-n+@{i}) {
+	  background-color: black;
+	}
+  .response-styles(@n, (@i + 1));
+}

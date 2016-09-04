@@ -1,12 +1,21 @@
+@import './core/reset.less';
 @import './core/variable.less';
+@import './core/mixin.less';
 
 body {
 	margin: 0;
 	background-color: @color-gray;
+	font-family: sans-serif;
 }
 
 body * {
 	box-sizing: border-box;
+}
+
+.survey-greeting {
+	.content-spacing();
+	font-size: 24px;
+	text-align: justify;
 }
 
 .survey-content {
@@ -15,4 +24,140 @@ body * {
 	padding: 0 100px 100px;
 	width: 900px;
 	
+}
+
+.survey-question-container {
+	.content-spacing();	
+}
+
+.survey-thanks {
+	.content-spacing();
+	font-size: 24px;
+}
+
+/*
+	/// User info
+ */
+.survey-userinfo {
+	.survey-section-heading {
+		font-size: 24px;
+		font-weight: bold;
+	}	
+
+	.survey-section-subheading {
+		font-weight: normal;
+	}
+
+	.survey-userinfo-field {
+		font-family: arial;
+		font-size: 14px;
+		font-weight: bold;
+		padding: 5px 0;
+
+		label {
+			font-size: 16px;
+			padding: 5px 0;
+			display: block;
+		}
+
+		select {
+			display: block;
+			background-color: @color-white;
+		    border: 1px solid @color-gray-2;
+		    padding: 5px 0;
+		    border-radius: 2px;
+		    font-size: 14px;
+		}
+	}
+}
+
+/*
+	Other form questions
+ */
+.survey-section {
+	font-family: arial;
+	font-size: 14px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.survey-section-question {
+	font-size: 24px;
+	padding: 10px 0;
+	position: relative;	
+}
+
+.survey-qestion-text {
+	width: 70%;
+}
+
+.survey-response-widget {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+
+.survey-response label {
+  border: 1px solid black;
+  width: 10px;
+  height: 10px;
+  overflow: hidden;
+  display: inline-block;
+  transform: rotate(45deg);
+  margin-right: 5px;
+  position: relative;
+  cursor: pointer;
+}
+
+.survey-response label:before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+.survey-response input {
+  opacity: 0;
+  cursor: pointer;
+}
+
+
+.survey-section-comment-label {
+	font-family: arial;
+	font-size: 14px;
+	font-weight: bold;
+	text-transform: uppercase;
+	padding: 30px 0 10px	
+}
+
+.survey-section-comment {
+	width: 50%;
+	height: 50px;
+}
+
+
+@media screen and (max-width: 768px) {
+	.survey-content {
+    	margin: 0;
+    	padding: 0 10px 10px;
+    	width: 100%;
+	}
+
+	.survey-header-image {
+		width: 100%;
+	}
+
+	.survey-qestion-text {
+		width: 100%;
+	}
+
+	.survey-response-widget {
+		position: static;
+	}
+
+	.survey-section-comment {
+		width: 100%;
+		height: 50px;
+	}
 }

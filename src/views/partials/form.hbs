@@ -1,20 +1,44 @@
 <form class="survey-form">
+	{{> userinfo}}
 	{{#each data.sections}}
     <fieldset class="survey-question-container">
-        <legend class="survey-section">{{text}}</legend>
+        <legend class="survey-section">{{heading}}</legend>
         <ul class="survey-section-question-list">
         	{{#each questions}}
             <li class="survey-section-question">
-                <div> {{text}}
-                	<div class="qestion-response-widget">
-                		<input type="radio"/>
-                	</div>
-                </div>
+            	<div class="survey-qestion-text">
+                {{text}}
+            	</div>
+            	<div class="survey-response-widget">
+            		<div class="survey-response">
+					  <label>1
+					    <input type="radio" name="question1" value="1"/>
+					  </label>
+					  <label>2
+					    <input type="radio" name="question1" value="2"/>
+					  </label>
+					  <label>3
+					    <input type="radio" name="question1" value="3"/>
+					  </label>
+					  <label>4
+					    <input type="radio" name="question1" value="4"/>
+					  </label>
+					  <label>5
+					    <input type="radio" name="question1" value="5"/>
+					  </label>
+					    <div class="indicator"></div>
+					</div>
+            	</div>
             </li>
     		{{/each}}        
         </ul>
-        {{finalComment}}
-        <textarea></textarea>
+        <div class="survey-section-comment-label">
+        	{{finalComment}}
+    	</div>
+        <textarea class="survey-section-comment"></textarea>
     </fieldset>
 	{{/each}}
+	<button> Previous </button>
+	<button> Next </button>
+	<button> Submit </button>
 </form>
