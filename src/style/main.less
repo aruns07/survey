@@ -99,9 +99,9 @@ body * {
 
 
 .survey-response label {
-  border: 1px solid black;
-  width: 10px;
-  height: 10px;
+  border: 3px solid black;
+  width: 15px;
+  height: 15px;
   overflow: hidden;
   display: inline-block;
   transform: rotate(45deg);
@@ -137,6 +137,55 @@ body * {
 }
 
 
+/*
+	Form actions
+ */
+.survey-form-actions {
+	display: flex;
+    justify-content: center;
+
+    button {
+    	.survey-section();
+    	width: 224px;
+    	height: 55px;
+    	border: none;
+    	margin: 0 5px;
+    }
+
+    &.step-first {
+    	.survey-form-prev,
+    	.survey-form-submit {
+    		display: none;
+    	}
+    }
+
+    &.step-mid {
+    	.survey-form-submit {
+    		display: none;
+    	}
+    }
+
+    &.step-submit {
+    	.survey-form-next {
+    		display: none;
+    	}
+    }    
+}
+
+.survey-form-prev {
+	color: @color-gray-2;
+	background-color: @color-gray-3;
+}
+
+.survey-form-next,
+.survey-form-submit {
+	color: @color-white;
+	background-color: @color-black;
+}
+
+/*
+	Narrow Style
+ */
 @media screen and (max-width: 768px) {
 	.survey-content {
     	margin: 0;
