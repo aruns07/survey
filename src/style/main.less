@@ -20,10 +20,10 @@ body * {
 
 .survey-content {
 	background-color: @color-white;
-	margin: 0 auto 200px;
+	margin: 0 auto 100px;
 	padding: 0 100px 100px;
 	width: 900px;
-	
+	min-height: 90vh;
 }
 
 .survey-question-container {
@@ -66,7 +66,9 @@ body * {
 		    border: 1px solid @color-gray-2;
 		    padding: 5px 0;
 		    border-radius: 2px;
-		    font-size: 14px;
+		    font-size: 16px;
+		    width: 200px;
+    		height: 30px;
 		}
 	}
 }
@@ -181,6 +183,14 @@ body * {
 .survey-form-submit {
 	color: @color-white;
 	background-color: @color-black;
+}
+
+.survey-form-step {
+	display: none;
+	
+	&[aria-current='true'] {
+		display: block;
+	}
 }
 
 /*

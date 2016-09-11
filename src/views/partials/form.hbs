@@ -1,10 +1,10 @@
 <form class="survey-form">
-	<div class="survey-greeting" aria-current="false">{{data.greeting}}</div>
+	<div class="survey-greeting survey-form-step" aria-current="true">{{data.greeting}}</div>
 	
 	{{> userinfo}}
 	
 	{{#each data.sections}}
-    <fieldset class="survey-question-container" aria-current="false">
+    <fieldset class="survey-question-container  survey-form-step" aria-current="false">
         <legend class="survey-section">{{heading}}</legend>
         <ul class="survey-section-question-list">
         	{{#each questions}}
@@ -42,9 +42,9 @@
     </fieldset>
 	{{/each}}
 
-	<div class="survey-thanks" aria-current="false">{{data.thanks}}</div>
+	<div class="survey-thanks  survey-form-step" aria-current="false">{{data.thanks}}</div>
 	
-	<div class="survey-form-actions">
+	<div class="survey-form-actions step-first">
 		<button class="survey-form-prev"> Previous </button>
 		<button class="survey-form-next"> Next </button>
 		<button class="survey-form-submit"> Submit </button>
