@@ -1,5 +1,5 @@
 {
-  "name": "lightcms",
+  "name": "survey",
   "version": "0.1.0",
   "description": "use contentfull cms",
   "main": "web.js",
@@ -14,17 +14,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aruns07/lightcms.git"
+    "url": "git+https://github.com/aruns07/survey.git"
   },
   "keywords": [
-    "cms"
+    "survey"
   ],
   "author": "arun",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/aruns07/lightcms/issues"
+    "url": "https://github.com/aruns07/survey/issues"
   },
-  "homepage": "https://github.com/aruns07/lightcms#readme",
+  "homepage": "https://github.com/aruns07/survey#readme",
   "dependencies": {
     "babel-core": "^6.14.0",
     "babel-loader": "^6.2.5",
