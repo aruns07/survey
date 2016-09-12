@@ -196,7 +196,15 @@ body * {
     	.survey-form-next {
     		display: none;
     	}
-    }    
+    }
+
+    &.step-last {
+    	.survey-form-prev,
+    	.survey-form-next,
+    	.survey-form-submit {
+    		display: none;
+    	}
+    }   
 }
 
 .survey-form-prev {
@@ -238,10 +246,12 @@ body * {
 
 	.survey-response-widget {
 		position: static;
+		margin-top: 10px;
 	}
 
 	.survey-section-comment {
 		width: 100%;
 		height: 50px;
 	}
+
 }
