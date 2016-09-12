@@ -2,6 +2,7 @@
 
 let util = require('./server/util');
 let model = require('./server/model');
+let validateRequest = require('./server/requestValidation');
 let express = require('express');
 let exphbs = require('express-handlebars');
 let app = express();
@@ -14,14 +15,14 @@ require('./server/handlebars-config')(app, exphbs);
 app.use(express.static('dist'));
 app.use(bodyParser.json());
 
-let data = JSON.parse(fs.readFileSync('./data/questions.js'));
+let questions = JSON.parse(fs.readFileSync('./data/questions.js'));
 
 app.get('/', (req, res) => {
-	res.render('home', data);
+	res.render('home', questions);
 });
 
 app.post('/save', (req, res) => {
-	if(!req.xhr) {
+	if(!validateRequest(req, questions.data)) {
 		res.sendStatus(400);
 		return;
 	}
