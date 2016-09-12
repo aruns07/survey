@@ -47,11 +47,13 @@ class Navigation {
 
 	setStepStage() {
 		if ( this.activeStep === 0 ) {
-			this.$control.removeClass('step-submit step-mid').addClass('step-first');
+			this.$control.removeClass('step-first step-mid step-submit step-last').addClass('step-first');
 		} else if ( this.activeStep === this.$formSteps.length - 1 - this.STEPS_AFTER_SUBMIT) {
-			this.$control.removeClass('step-first step-mid').addClass('step-submit');
+			this.$control.removeClass('step-first step-mid step-submit step-last').addClass('step-submit');
+		}  else if ( this.activeStep === this.$formSteps.length - 1) {
+			this.$control.removeClass('step-first step-mid step-submit step-last').addClass('step-last');
 		} else {
-			this.$control.removeClass('step-first step-submit').addClass('step-mid');
+			this.$control.removeClass('step-first step-mid step-submit step-last').addClass('step-mid');
 		}
 	}
 
