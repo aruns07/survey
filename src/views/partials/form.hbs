@@ -13,21 +13,21 @@
                 {{text}}
             	</div>
             	<div class="survey-response-widget">
-            		<div class="survey-response">
+            		<div class="survey-response survey-store" data-survey-fieldtype="radio" data-survey-fieldtext="{{../heading}}_{{text}}">
 					  <label>1
-					    <input type="radio" name="question1" value="1"/>
+					    <input type="radio" name="S{{@../index}}_Q{{@index}}" value="1"/>
 					  </label>
 					  <label>2
-					    <input type="radio" name="question1" value="2"/>
+					    <input type="radio" name="S{{@../index}}_Q{{@index}}" value="2"/>
 					  </label>
 					  <label>3
-					    <input type="radio" name="question1" value="3"/>
+					    <input type="radio" name="S{{@../index}}_Q{{@index}}" value="3"/>
 					  </label>
 					  <label>4
-					    <input type="radio" name="question1" value="4"/>
+					    <input type="radio" name="S{{@../index}}_Q{{@index}}" value="4"/>
 					  </label>
 					  <label>5
-					    <input type="radio" name="question1" value="5"/>
+					    <input type="radio" name="S{{@../index}}_Q{{@index}}" value="5"/>
 					  </label>
 					    <div class="indicator"></div>
 					</div>
@@ -36,9 +36,9 @@
     		{{/each}}        
         </ul>
         <div class="survey-section-comment-label">
-        	{{finalComment}}
+        	{{finalComment.text}}
     	</div>
-        <textarea class="survey-section-comment"></textarea>
+        <textarea class="survey-section-comment survey-store" data-survey-fieldtype="text" data-survey-fieldtext="{{heading}}_{{finalComment.text}}"></textarea>
     </fieldset>
 	{{/each}}
 

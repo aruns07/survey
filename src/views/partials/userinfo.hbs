@@ -6,18 +6,20 @@
             <br>
             <span class="survey-section-subheading">{{data.userData.subHeading}}</span>
         </legend>
-        	{{#each data.userData.questions}}
-            <div class="survey-userinfo-field">
-                <label for="survey-userinfo-field_{{@index}}">
-                    {{text}}
-                </label>
-                <select id="survey-userinfo-field_{{@index}}">
-                    <option>Please select</option>
-                   {{#each options}}
-                    <option>{{.}}</option>
-                   {{/each}} 
-                </select>
-            </div>
-    		{{/each}}        
+            {{#with data.userData}}
+            	{{#each questions}}
+                <div class="survey-userinfo-field">
+                    <label for="survey-userinfo-field_{{@index}}">
+                        {{text}}
+                    </label>
+                    <select id="survey-userinfo-field_{{@index}}" class="survey-store" data-survey-fieldtype="select" data-survey-fieldtext="{{../heading}}_{{text}}">
+                        <option>Please select</option>
+                       {{#each options}}
+                        <option>{{.}}</option>
+                       {{/each}} 
+                    </select>
+                </div>
+        		{{/each}}  
+            {{/with}}        
 
     </fieldset>
