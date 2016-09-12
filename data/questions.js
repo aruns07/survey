@@ -22,25 +22,35 @@
 				"heading": "My Career",
 				"questions": [
 					{
-						"text": "Hello Qaa lewr oix on sdf"
+						"text": "Q1 Hello Qaa lewr oix on sdf",
+						"fieldType": "radio"
 					},
 					{
-						"text": "Qaa lewr oix on sdf"
+						"text": "Q2 Qaa lewr oix on sdf",
+						"fieldType": "radio"
 					}
 				],
-				"finalComment": "ANY OTHER THOUGHTS OR SUGGESTIONS ABOUT MY CAREER?"
+				"finalComment": {
+					"text": "ANY OTHER THOUGHTS OR SUGGESTIONS ABOUT MY CAREER?",
+					"fieldType": "text"
+				}
 			},
 			{
 				"heading": "My Life",
 				"questions": [
 					{
-						"text": "Qaa lewr oix on sdf"
+						"text": "Q3 Qaa lewr oix on sdf",
+						"fieldType": "radio"
 					},
 					{
-						"text": "Qaa lewr oix on sdf"
+						"text": "Q4 Qaa lewr oix on sdf",
+						"fieldType": "radio"
 					}
 				],
-				"finalComment": "ANY OTHER THOUGHTS OR SUGGESTIONS ABOUT MY LIFE?"
+				"finalComment": {
+					"text": "ANY OTHER THOUGHTS OR SUGGESTIONS ABOUT MY CAREER?",
+					"fieldType": "text"
+				}
 			}
 		],
 		"thanks": "Thanks"
