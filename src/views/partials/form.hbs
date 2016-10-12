@@ -66,8 +66,11 @@
         <textarea class="survey-section-comment survey-store" data-survey-fieldtype="text" data-survey-fieldtext="{{heading}}_{{finalComment.text}}"></textarea>
     </fieldset>
 	{{/each}}
-
-	<div class="survey-thanks  survey-form-step" aria-current="false">{{data.thanks}}</div>
+    <fieldset class="survey-question-container  survey-form-step" aria-current="false">
+        <legend class="survey-final-comment-heading">{{data.finalComment.text}}</legend>
+        <textarea class="survey-final-comment survey-store" data-survey-fieldtype="text" data-survey-fieldtext="{{data.finalComment.text}}"></textarea>
+    </fieldset>
+	<div class="survey-thanks  survey-form-step" aria-current="false">{{{data.thanks}}}</div>
 	
 	<div class="survey-form-actions step-first">
 		<button class="survey-form-prev"> Previous </button>

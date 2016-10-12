@@ -24,6 +24,8 @@ let referenceCompare = (data, baseData) => {
 		baseKeys.push(heading + '_' + section.finalComment.text);
 	});
 
+	baseKeys.push(baseData.finalComment.text);
+
 	for (let reqDataKey in data) {
 		if (baseKeys.indexOf(reqDataKey) === -1) {
 			return false;
