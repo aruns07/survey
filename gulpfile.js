@@ -71,6 +71,44 @@ gulp.task('script', () => {
 			.pipe(gulp.dest('dist/'));
 });
 
+gulp.task('script:prod', () => {
+	return gulp.src('src/script/main.js')
+			.pipe(gulpWebpack({
+				output: {
+					filename: 'main.js'
+				},
+				resolve: {
+					alias: {
+						handlebars: 'handlebars/dist/handlebars.min.js'
+					}
+				},
+				module: {
+					loaders: [
+					  {
+					    test: /\.js$/,
+					    exclude: /(node_modules)/,
+					    loader: 'babel',
+					    query: {
+					      presets: ['es2015']
+					    }
+					  }
+					]
+				},
+				plugins: [
+			        new webpack.optimize.UglifyJsPlugin({
+			            compress: {
+			                warnings: false,
+			            },
+			            output: {
+			                comments: false,
+			                semicolons: true,
+			            }
+			        })
+			    ]
+			}, webpack))
+			.pipe(gulp.dest('dist/'));
+});
+
 gulp.task('style', () => {
 	return gulp.src('src/style/main.less')
 			.pipe(less())
@@ -101,6 +139,7 @@ gulp.task('serve', () => {
 gulp.task('clean', del.bind(null, ['dist/**']));
 
 gulp.task('build', [ 'lint', 'script', 'style', 'images', 'other']);
+gulp.task('buildProd', [ 'lint', 'script:prod', 'style', 'images', 'other']);
 
 gulp.task('default', ['clean'], () => {
 	gulp.start('build');
