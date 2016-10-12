@@ -27,8 +27,10 @@ app.post('/save', (req, res) => {
 		return;
 	}
 
-	model.insert(req.body, (err, newDoc) => {
+	let finalData = JSON.parse(JSON.stringify(req.body).replace(/\./g, ''));
+	model.insert(finalData, (err, newDoc) => {
 		if (err) {
+			console.log(err);
 			res.sendStatus(500);
 		} else {
 			res.sendStatus(200);
