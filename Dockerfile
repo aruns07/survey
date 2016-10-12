@@ -9,4 +9,4 @@ RUN npm install gulp-cli -g
 COPY . /usr/survey/src/app
 RUN gulp buildProd
 EXPOSE 3000
-CMD [ "node", "web.js" ]
+CMD [ "node", "web.js", "--isDockerContainer"]
