@@ -1,75 +1,77 @@
 <form class="survey-form">
-	<div class="survey-greeting survey-form-step" aria-current="true">{{data.greeting}}</div>
-	
-	{{> userinfo}}
-	
-	{{#each data.sections}}
-    <fieldset class="survey-question-container  survey-form-step" aria-current="false">
-        <legend class="survey-section">{{heading}}</legend>
-        <ul class="survey-section-question-list">
-        	{{#each questions}}
-            <li class="survey-section-question">
-            	<div class="survey-qestion-text">
-                {{text}}
-            	</div>
-            	<div class="survey-response-widget">
-            		<div class="survey-response survey-store" data-survey-fieldtype="radio" data-survey-fieldtext="{{../heading}}_{{text}}">
-					  <label>1
-					    <input type="radio" name="S{{@../index}}_Q{{@index}}" value="1"/>
-					  </label>
-					  <label>2
-					    <input type="radio" name="S{{@../index}}_Q{{@index}}" value="2"/>
-					  </label>
-					  <label>3
-					    <input type="radio" name="S{{@../index}}_Q{{@index}}" value="3"/>
-					  </label>
-					  <label>4
-					    <input type="radio" name="S{{@../index}}_Q{{@index}}" value="4"/>
-					  </label>
-					  <label>5
-					    <input type="radio" name="S{{@../index}}_Q{{@index}}" value="5"/>
-					  </label>
-					    <div class="indicator"></div>
-					</div>
-            	</div>
-            </li>
-    		{{/each}}        
-        </ul>
-        <div class="survey-hints-container">
-        	Your opinion matters :
-        	<ol class="survey-hints">
-        		<li>
-				  <img class="survey-hint-visual" src="images/five.png" alt=""/>
-				  strongly agree
-				</li>
-				<li>
-				  <img class="survey-hint-visual" src="images/four.png" alt=""/>
-				  agree
-				</li>
-				<li>
-				  <img class="survey-hint-visual" src="images/three.png" alt=""/>
-				  neither agree nor disagree
-				</li>
-				<li>
-				  <img class="survey-hint-visual" src="images/two.png" alt=""/>
-				  disagree
-				</li>
-				<li>
-				  <img class="survey-hint-visual" src="images/one.png" alt=""/>
-				  strongly disagree
-				</li>
-        	</ol>
-        </div>
-        <div class="survey-section-comment-label">
-        	{{finalComment.text}}
-    	</div>
-        <textarea class="survey-section-comment survey-store" data-survey-fieldtype="text" data-survey-fieldtext="{{heading}}_{{finalComment.text}}"></textarea>
-    </fieldset>
-	{{/each}}
-    <fieldset class="survey-question-container  survey-form-step" aria-current="false">
-        <legend class="survey-final-comment-heading">{{data.finalComment.text}}</legend>
-        <textarea class="survey-final-comment survey-store" data-survey-fieldtype="text" data-survey-fieldtext="{{data.finalComment.text}}"></textarea>
-    </fieldset>
+	<div class="survey-form-steps-list">
+		<div class="survey-greeting survey-form-step" aria-current="true">{{data.greeting}}</div>
+		
+		{{> userinfo}}
+		
+		{{#each data.sections}}
+	    <fieldset class="survey-question-container  survey-form-step" aria-current="false">
+	        <legend class="survey-section">{{heading}}</legend>
+	        <ul class="survey-section-question-list">
+	        	{{#each questions}}
+	            <li class="survey-section-question">
+	            	<div class="survey-qestion-text">
+	                {{text}}
+	            	</div>
+	            	<div class="survey-response-widget">
+	            		<div class="survey-response survey-store" data-survey-fieldtype="radio" data-survey-fieldtext="{{../heading}}_{{text}}">
+						  <label>1
+						    <input type="radio" name="S{{@../index}}_Q{{@index}}" value="1"/>
+						  </label>
+						  <label>2
+						    <input type="radio" name="S{{@../index}}_Q{{@index}}" value="2"/>
+						  </label>
+						  <label>3
+						    <input type="radio" name="S{{@../index}}_Q{{@index}}" value="3"/>
+						  </label>
+						  <label>4
+						    <input type="radio" name="S{{@../index}}_Q{{@index}}" value="4"/>
+						  </label>
+						  <label>5
+						    <input type="radio" name="S{{@../index}}_Q{{@index}}" value="5"/>
+						  </label>
+						    <div class="indicator"></div>
+						</div>
+	            	</div>
+	            </li>
+	    		{{/each}}        
+	        </ul>
+	        <div class="survey-hints-container">
+	        	Your opinion matters :
+	        	<ol class="survey-hints">
+	        		<li>
+					  <img class="survey-hint-visual" src="images/five.png" alt=""/>
+					  strongly agree
+					</li>
+					<li>
+					  <img class="survey-hint-visual" src="images/four.png" alt=""/>
+					  agree
+					</li>
+					<li>
+					  <img class="survey-hint-visual" src="images/three.png" alt=""/>
+					  neither agree nor disagree
+					</li>
+					<li>
+					  <img class="survey-hint-visual" src="images/two.png" alt=""/>
+					  disagree
+					</li>
+					<li>
+					  <img class="survey-hint-visual" src="images/one.png" alt=""/>
+					  strongly disagree
+					</li>
+	        	</ol>
+	        </div>
+	        <div class="survey-section-comment-label">
+	        	{{finalComment.text}}
+	    	</div>
+	        <textarea class="survey-section-comment survey-store" data-survey-fieldtype="text" data-survey-fieldtext="{{heading}}_{{finalComment.text}}"></textarea>
+	    </fieldset>
+		{{/each}}
+	    <fieldset class="survey-question-container  survey-form-step" aria-current="false">
+	        <legend class="survey-final-comment-heading">{{data.finalComment.text}}</legend>
+	        <textarea class="survey-final-comment survey-store" data-survey-fieldtype="text" data-survey-fieldtext="{{data.finalComment.text}}"></textarea>
+	    </fieldset>
+    </div>
 	<div class="survey-thanks  survey-form-step" aria-current="false">{{{data.thanks}}}</div>
 	
 	<div class="survey-form-actions step-first">

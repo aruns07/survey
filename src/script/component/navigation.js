@@ -7,6 +7,7 @@ class Navigation {
 		this.STEPS_AFTER_SUBMIT = 1;
 
 		this.$form = $(form);
+		this.$formStepsList = this.$form.find('.survey-form-steps-list');
 		this.$formSteps = this.$form.find('.survey-form-step');
 		this.activeStep = 0;
 
@@ -28,20 +29,30 @@ class Navigation {
 	moveBack(event) {
 		event.preventDefault();
 		if ( this.activeStep !== 0 ) {
-			this.$formSteps.eq(this.activeStep).attr('aria-current', false);
-			this.activeStep--;
-			this.$formSteps.eq(this.activeStep).attr('aria-current', true);
-			this.setStepStage();
+			this.$formStepsList.addClass('animation-prev');
+
+			window.setTimeout(() => {
+				this.$formSteps.eq(this.activeStep).attr('aria-current', false);
+				this.activeStep--;
+				this.$formSteps.eq(this.activeStep).attr('aria-current', true);
+				this.setStepStage();
+				this.$formStepsList.removeClass('animation-prev');
+			}, 500);
 		}
 	}
 
 	moveNext(event) {
 		event.preventDefault();
 		if ( this.activeStep !== this.$formSteps.length - 1 ) {
-			this.$formSteps.eq(this.activeStep).attr('aria-current', false);
-			this.activeStep++;
-			this.$formSteps.eq(this.activeStep).attr('aria-current', true);
-			this.setStepStage();
+			this.$formStepsList.addClass('animation-next');
+
+			window.setTimeout(() => {
+				this.$formSteps.eq(this.activeStep).attr('aria-current', false);
+				this.activeStep++;
+				this.$formSteps.eq(this.activeStep).attr('aria-current', true);
+				this.setStepStage();
+				this.$formStepsList.removeClass('animation-next');
+			}, 500);
 		}
 	}
 

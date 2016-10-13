@@ -17,7 +17,7 @@ body * {
 	.content-spacing();
 	font-size: 24px;
 	text-align: justify;
-	line-height: 30px;
+	line-height: 34px;
 }
 
 .survey-content {
@@ -48,6 +48,7 @@ body * {
 	}	
 
 	.survey-section-subheading {
+		font-size: 20px;
 		font-weight: normal;
 	}
 
@@ -213,9 +214,46 @@ body * {
 
 .survey-form-step {
 	display: none;
+	transition: transform 500ms ease, opacity 500ms ease;
+
+	&[aria-current='false'] {
+		transform: translate(-100%);
+	}
 	
 	&[aria-current='true'] {
 		display: block;
+	}
+
+	&[aria-current='true'] ~ [aria-current='false'] {
+		transform: translate(100%);
+	}
+
+}
+
+/*
+	Form step animation
+ */
+.survey-form-steps-list {
+	overflow: hidden;
+
+	&.animation-next {
+		.survey-form-step {
+			opacity: 0.2;
+
+			&[aria-current='true'] {
+				transform: translate(-100%);
+			}			
+		}
+	}
+
+	&.animation-prev {
+		.survey-form-step {
+			opacity: 0.2;
+
+			&[aria-current='true'] {
+				transform: translate(100%);
+			}
+		}
 	}
 }
 
