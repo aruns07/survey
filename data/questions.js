@@ -53,6 +53,10 @@
 				}
 			}
 		],
+		"finalComment": {
+			"text": "Final Comment.",
+			"fieldType": "text"
+		},
 		"thanks": "Thanks"
 	}
 }
