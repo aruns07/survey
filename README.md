@@ -30,5 +30,21 @@ Data will be present in store.db file.
 For Docker at /home/docker/survey/data mounted path
 other wise <project folder>/data
 
+## Security
+To make the data secure, provide a public encryption key named key.pub.
+The applicaton will store the user entered data encrypted.
+
+1. `openssl genrsa -out key.pem 2048`
+2. `openssl rsa -in key.pem -pubout > key.pub`
+
+DO NOT PUT THE PRIVATE KEY IN THE SOURCE CODE. KEEP IT SECURE.
+
+### Decrypt & Export
+To decrypt the data and export in CSV format use export.js with private key
+
+```
+node export.js --privateKeyPath=./key.pem
+```
+
 
 
