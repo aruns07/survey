@@ -5,6 +5,7 @@ let model = require('./server/model');
 let validateRequest = require('./server/requestValidation');
 let express = require('express');
 let exphbs = require('express-handlebars');
+let path = require("path");
 let app = express();
 
 let fs = require('fs');
@@ -28,7 +29,12 @@ app.post('/save', (req, res) => {
 	}
 
 	let finalData = JSON.parse(JSON.stringify(req.body).replace(/\./g, ''));
-	model.insert(finalData, (err, newDoc) => {
+	let absolutePath = path.resolve('./key.pub');
+    let publicKey = fs.readFileSync(absolutePath, "utf8");
+	let encryptedData = util.encryptData(finalData, publicKey);
+	
+	
+	model.insert(encryptedData, (err, newDoc) => {
 		if (err) {
 			console.log(err);
 			res.sendStatus(500);
