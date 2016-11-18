@@ -3,23 +3,15 @@ let $ = require('jquery');
 
 class Store {
 
-	constructor(form, navigation) {
-
+	constructor(form) {
 		this.$form = $(form);
-
-		this.navigation = navigation;
-
-		this.$submit = this.$form.find('.survey-form-submit');
-
-		this.$submit.on('click', this.submitForm.bind(this));
 	}
 
-	submitForm(event) {
-		event.preventDefault();
+	submitForm() {
 		let data = {};
 		let $fields = this.$form.find('.survey-store');
 
-		$fields.each(function(index) {
+		$fields.each((index) => {
 			let $field = $fields.eq(index);
 			let fieldType = $field.data('survey-fieldtype');
 			let fieldText = $field.data('survey-fieldtext');
@@ -29,7 +21,7 @@ class Store {
 				fieldValue = $field.find('option:selected').text();
 			} else if (fieldType === 'text') { 
 				fieldValue = $field.val() || ' ';
-			} else if (fieldType === 'radio') { 
+			} else if (fieldType === 'radio-widget') { 
 				fieldValue = $field.find('input[type="radio"]:checked').val() || '0';
 			}
 
@@ -37,15 +29,12 @@ class Store {
 
 		});
 
-		$.ajax({
-			url: '/save',
-			method: 'POST',
-			contentType: 'application/json',
-			data: JSON.stringify(data)
-		}).done(()=> {
-			console.log('Saved');
-			this.navigation.moveNext(event);
-		});
+		return $.ajax({
+				url: '/save',
+				method: 'POST',
+				contentType: 'application/json',
+				data: JSON.stringify(data)
+			});
 	}
 }
 
