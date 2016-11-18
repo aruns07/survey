@@ -6,8 +6,10 @@ let Navigation = require('./component/navigation.js');
 let Store = require('./component/store.js');
 
 
-let navigation = new Navigation($('.survey-form'));
-let store = new Store($('.survey-form'), navigation);
+let $surveyForm = $('.survey-form');
+let store = new Store($surveyForm);
+let navigation = new Navigation($surveyForm, store);
+
 
 let responseWidgets = $('.survey-response-widget');
 responseWidgets.each(function(index) {
