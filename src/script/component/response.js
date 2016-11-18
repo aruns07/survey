@@ -13,6 +13,10 @@ class Response {
 	    this.element.setAttribute('response', value);
 	  }
 	}
+
+	get isValid() {
+		return this.element.querySelector('input').validity.valid;
+	}
 }
 
 module.exports = Response;
