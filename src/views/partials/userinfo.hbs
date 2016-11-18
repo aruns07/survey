@@ -12,8 +12,8 @@
                     <label for="survey-userinfo-field_{{@index}}">
                         {{text}}
                     </label>
-                    <select id="survey-userinfo-field_{{@index}}" class="survey-store" data-survey-fieldtype="select" data-survey-fieldtext="{{../heading}}_{{text}}">
-                        <option>Please select</option>
+                    <select id="survey-userinfo-field_{{@index}}" class="survey-store" data-survey-fieldtype="select" data-survey-fieldtext="{{../heading}}_{{text}}" {{inputRequired required}}>
+                        <option></option>
                        {{#each options}}
                         <option>{{.}}</option>
                        {{/each}} 

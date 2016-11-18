@@ -8,12 +8,14 @@
 				{
 					"text": "Gender",
 					"fieldType": "select",
-					"options": ["Male", "Female"]
+					"options": ["Male", "Female"],
+					"required": true
 				},
 				{
 					"text": "Department",
 					"fieldType": "select",
-					"options": ["Tech", "Business"]
+					"options": ["Tech", "Business"],
+					"required": true
 				}
 			]
 		},
@@ -23,16 +25,19 @@
 				"questions": [
 					{
 						"text": "Q1 Hello Qaa lewr oix on sdf",
-						"fieldType": "radio"
+						"fieldType": "radio",
+						"required": true
 					},
 					{
 						"text": "Q2 Qaa lewr oix on sdf",
-						"fieldType": "radio"
+						"fieldType": "radio",
+						"required": true
 					}
 				],
 				"finalComment": {
 					"text": "ANY OTHER THOUGHTS OR SUGGESTIONS ABOUT MY CAREER?",
-					"fieldType": "text"
+					"fieldType": "text",
+					"required": true
 				}
 			},
 			{
@@ -40,22 +45,26 @@
 				"questions": [
 					{
 						"text": "Q3 Qaa lewr oix on sdf",
-						"fieldType": "radio"
+						"fieldType": "radio",
+						"required": true
 					},
 					{
 						"text": "Q4 Qaa lewr oix on sdf",
-						"fieldType": "radio"
+						"fieldType": "radio",
+						"required": true
 					}
 				],
 				"finalComment": {
 					"text": "ANY OTHER THOUGHTS OR SUGGESTIONS ABOUT MY CAREER?",
-					"fieldType": "text"
+					"fieldType": "text",
+					"required": true
 				}
 			}
 		],
 		"finalComment": {
 			"text": "Final Comment.",
-			"fieldType": "text"
+			"fieldType": "text",
+			"required": true
 		},
 		"thanks": "Thanks"
 	}

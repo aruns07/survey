@@ -14,6 +14,9 @@ module.exports = function(app, exphbs) {
 							}
 						}
 						return 'Not found';
+					},
+					inputRequired: function(value) {
+						return (value === true ? 'required' : '');
 					}
 				}
 			}));

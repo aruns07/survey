@@ -14,21 +14,21 @@
 	                {{text}}
 	            	</div>
 	            	<div class="survey-response-widget">
-	            		<div class="survey-response survey-store" data-survey-fieldtype="radio" data-survey-fieldtext="{{../heading}}_{{text}}">
+	            		<div class="survey-response survey-store" data-survey-fieldtype="radio-widget" data-survey-fieldtext="{{../heading}}_{{text}}" {{inputRequired required}}  tabindex="0">
 						  <label>1
-						    <input type="radio" name="S{{@../index}}_Q{{@index}}" value="1"/>
+						    <input type="radio" name="S{{@../index}}_Q{{@index}}" value="1" {{inputRequired required}}/>
 						  </label>
 						  <label>2
-						    <input type="radio" name="S{{@../index}}_Q{{@index}}" value="2"/>
+						    <input type="radio" name="S{{@../index}}_Q{{@index}}" value="2" {{inputRequired required}}/>
 						  </label>
 						  <label>3
-						    <input type="radio" name="S{{@../index}}_Q{{@index}}" value="3"/>
+						    <input type="radio" name="S{{@../index}}_Q{{@index}}" value="3" {{inputRequired required}}/>
 						  </label>
 						  <label>4
-						    <input type="radio" name="S{{@../index}}_Q{{@index}}" value="4"/>
+						    <input type="radio" name="S{{@../index}}_Q{{@index}}" value="4" {{inputRequired required}}/>
 						  </label>
 						  <label>5
-						    <input type="radio" name="S{{@../index}}_Q{{@index}}" value="5"/>
+						    <input type="radio" name="S{{@../index}}_Q{{@index}}" value="5" {{inputRequired required}}/>
 						  </label>
 						    <div class="indicator"></div>
 						</div>
@@ -64,12 +64,12 @@
 	        <div class="survey-section-comment-label">
 	        	{{finalComment.text}}
 	    	</div>
-	        <textarea class="survey-section-comment survey-store" data-survey-fieldtype="text" data-survey-fieldtext="{{heading}}_{{finalComment.text}}"></textarea>
+	        <textarea class="survey-section-comment survey-store" data-survey-fieldtype="text" data-survey-fieldtext="{{heading}}_{{finalComment.text}}" {{inputRequired finalComment.required}}></textarea>
 	    </fieldset>
 		{{/each}}
 	    <fieldset class="survey-question-container  survey-form-step" aria-current="false">
 	        <legend class="survey-final-comment-heading">{{data.finalComment.text}}</legend>
-	        <textarea class="survey-final-comment survey-store" data-survey-fieldtype="text" data-survey-fieldtext="{{data.finalComment.text}}"></textarea>
+	        <textarea class="survey-final-comment survey-store" data-survey-fieldtype="text" data-survey-fieldtext="{{data.finalComment.text}}" {{inputRequired data.finalComment.required}}></textarea>
 	    </fieldset>
     </div>
 	<div class="survey-thanks  survey-form-step" aria-current="false">{{{data.thanks}}}</div>
